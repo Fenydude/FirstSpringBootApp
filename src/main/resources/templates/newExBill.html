@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Storage</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/expencebill/create}" th:object="${bill}">
+    <label for="year">Enter Date: </label>
+    <input type="text" th:field="*{date}" id="year"/>
+    <label for="id">Enter storageId: </label>
+    <input type="number" th:field="*{id}" id="id"/>
+    <label for="idInv">Enter nameInv: </label>
+    <input type="text" th:field="*{idInv}" id="idInv"/>
+    <label for="amount">Enter amount Inv: </label>
+    <input type="text" th:field="*{amountInv}" id="amount"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>

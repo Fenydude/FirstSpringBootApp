@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${inventory.getId()}">VALUE</p>
+<p th:text="${inventory.getName()}">VALUE</p>
+<p th:text="${inventory.getAmount()}">VALUE</p>
+<a th:href="@{/inventory/{id}/edit(id = ${inventory.getId()})}">Edit</a>
+
+<form th:method="POST" th:action="@{/inventory/{id}(id = ${inventory.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update ExBill</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/expencebill/{id}/update(id=${bill.getId()})}" th:object="${bill}">
+    <label for="year">Enter Date: </label>
+    <input type="text" th:field="*{date}" id="year"/>
+    <!-- <label for="mounth">Enter mounth: </label>
+     <input type="number"  id="mounth"/>
+     <label for="day">Enter day: </label>
+     <input type="number" id="day"/>-->
+    <label for="idt">Enter storageId: </label>
+    <input type="number" th:field="*{stId}" id="idt"/>
+    <label for="idInv">Enter nameInv: </label>
+    <input type="text" th:field="*{idInv}" id="idInv"/>
+    <label for="amount">Enter amount Inv: </label>
+    <input type="number" th:field="*{amountInv}" id="amount"/>
+    <input type="hidden" th:field="*{id}" id="id"/>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

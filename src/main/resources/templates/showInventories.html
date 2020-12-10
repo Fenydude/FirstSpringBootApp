@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventories</title>
+</head>
+<body>
+<div th:each="inventory : ${inventories}">
+    <a th:href="@{/inventory/{id}(id=${inventory.getId()})}" th:text="${inventory.getName()+  ' ' + inventory.getAmount()}">inventory</a>
+</div>
+
+<br/>
+<hr/>
+<a href="/inventory/new">Create new Inventory</a>
+</body>
+</html>

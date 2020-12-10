@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Storeges List</title>
+</head>
+<body>
+<div th:each="storage : ${storages}">
+    <a th:href="@{/storage/{id}(id=${storage.getId()})}" th:text="${storage.getId()+ ' ' + storage.getName()+  ' ' + storage.getNumber()}">storage</a>
+</div>
+
+<br/>
+<hr/>
+<a href="/storage/new">Create new Storage</a>
+</body>
+</html>

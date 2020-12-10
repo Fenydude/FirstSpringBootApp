@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${bill.getId()}">VALUE</p>
+<p th:text="${bill.getDate()}">VALUE</p>
+<p th:text="${bill.getStorege().getName()}">VALUE</p>
+<p th:text="${bill.getInventories()}">VALUE</p>
+
+</br>
+<a th:href="@{/incommingbill/{id}/edit(id = ${bill.getId()})}">Edit</a>
+</br>
+<form th:method="POST" th:action="@{/incommingbill/{id}(id = ${bill.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
